@@ -17,3 +17,6 @@ class User(Model):
 
     class PydanticMeta:
         exclude = ["password"]
+
+    def get_context_string(self, context: str):
+        return f"{context}{self.password[-6:]}{self.updated_at.strftime('%m%d%Y%H%M%S')}".strip()

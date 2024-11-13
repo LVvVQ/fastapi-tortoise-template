@@ -1,4 +1,4 @@
-from fastapi import APIRouter, status
+from fastapi import APIRouter, BackgroundTasks, status
 
 from app.responses.user import UserResponse
 from app.schemas.user import RegisterUserRequest
@@ -12,5 +12,5 @@ user_router = APIRouter(
 
 
 @user_router.post("", response_model=UserResponse, status_code=status.HTTP_201_CREATED)
-async def register_user(data: RegisterUserRequest):
-    return await user.create_user_account(data)
+async def register_user(data: RegisterUserRequest, backgournd_tasks: BackgroundTasks):
+    return await user.create_user_account(data, backgournd_tasks)

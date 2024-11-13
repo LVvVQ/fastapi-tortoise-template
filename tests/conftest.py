@@ -12,8 +12,8 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from app.main import app
 
 USER_NAME = "test"
-USER_EMAIL = "test@gmail.com"
-USER_PASSWORD = "password"
+USER_EMAIL = "test@qq.com"
+USER_PASSWORD = "p@ssW0rd"
 
 ClientManagerType = AsyncGenerator[AsyncClient, None]
 
